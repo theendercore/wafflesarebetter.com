@@ -6,7 +6,7 @@ export default function Map() {
     <Layout title="WafflesSMP Map">
       <iframe
         src="http://wafflessmp.apexmc.co:8123/"
-        className="min-h-[86vh] w-full"
+        className="min-h-[85vh] w-full"
       ></iframe>
     </Layout>
   );

@@ -1,12 +1,10 @@
-import React, { Children } from "react";
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { type } from "os";
-import { ScriptProps } from "next/script";
 import Head from "next/head";
 
 type LayoutProps = {
-  title: String;
+  title: string;
   children: React.ReactNode;
 };
 
@@ -19,8 +17,8 @@ export default function Layout({ title, children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="min-h-[86vh] flex-grow  bg-gray-200">
-        <main className="container m-auto min-h-[86vh]">{children}</main>
+      <div className="min-h-[84vh] flex-grow  bg-gray-200">
+        <main className="container m-auto min-h-[84vh]">{children}</main>
       </div>
       <Footer className="flex-end" />
     </div>
