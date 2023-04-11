@@ -10,7 +10,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout title="WafflesAreBetter Beta">
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <main className="flex min-h-[86vh] flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <SButton>
           {!user.isSignedIn ? <SignInButton /> : <SignOutButton />}
         </SButton>

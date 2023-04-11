@@ -7,11 +7,14 @@ export default function SMP() {
   return (
     <Layout title="WafflesSMP">
       <div>SMP stuff</div>
+      <div className="w-fit">
+
       <SButton>
         <Link as="/wafflessmp/map" href="/">
           Map
         </Link>
       </SButton>
+      </div>
     </Layout>
   );
 }

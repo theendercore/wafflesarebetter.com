@@ -12,17 +12,17 @@ type LayoutProps = {
 
 export default function Layout({ title, children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>{title}</title>
         <meta name="description" content="WafflesAreBetter Corp©" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="bg-gray-200 flex-grow">
-        <main className="container m-auto">{children}</main>
+      <div className="min-h-[86vh] flex-grow  bg-gray-200">
+        <main className="container m-auto min-h-[86vh]">{children}</main>
       </div>
-      <Footer className="flex-end"/>
+      <Footer className="flex-end" />
     </div>
   );
 }
