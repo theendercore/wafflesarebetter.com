@@ -3,6 +3,7 @@
 If we want to make a custom prefix for our sever we will need a couple of things.
 
 ## Making the assets
+
 First we need to draw the assets.
 ![Draw](./images/draw.png)
 
@@ -11,6 +12,7 @@ Now that we have the prefix ![prefix](./images/ender_prefix.png)
 _We need to make a basic recourse pack. If you don't know how to do that u can [Click Here](https://wafflesarebetter.com) for a tutorial._
 
 ## Making the font files
+
 And now that that is done. We need to add a font file, it can me named anything, but it probably should be named appropriately to the custom things you are adding.
 
 It should go under the `asset/namespace/font` folder and also move the prefix image `asset/namespace/textures/font`
