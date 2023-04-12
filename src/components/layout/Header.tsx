@@ -3,16 +3,17 @@ import React from "react";
 
 export default function Header() {
   return (
-    <ul className="m-auto flex items-center justify-evenly gap-20">
-      <HeaderItem url="/" className="self-end">
+    <div className="m-auto flex items-center justify-evenly gap-40 h-fit">
+      <Link as="/" href="/" className="">
         <img src="/favicon.ico" alt="WafflesAreBetter Logo" />
-      </HeaderItem>
-
-      <HeaderItem url="/">Home</HeaderItem>
-      <HeaderItem url="/about">About Me</HeaderItem>
-      <HeaderItem url="/wafflessmp">WafflesSMP</HeaderItem>
-      <HeaderItem url="/tutorials">Tutorials</HeaderItem>
-    </ul>
+      </Link>
+      <ul className="flex gap-20">
+        <HeaderItem url="/">Home</HeaderItem>
+        <HeaderItem url="/about">About Us</HeaderItem>
+        <HeaderItem url="/wafflessmp">WafflesSMP</HeaderItem>
+        <HeaderItem url="/tutorials">Tutorials</HeaderItem>
+      </ul>
+    </div>
   );
 }
 
@@ -27,7 +28,7 @@ function HeaderItem({
 }) {
   return (
     <li className={className}>
-      <Link as={url} href="/" className="p-3">
+      <Link as={url} href="/" className="py-8 hover:underline">
         {children}
       </Link>
     </li>
