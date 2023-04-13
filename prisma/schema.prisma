@@ -20,4 +20,5 @@ model Post {
     authorId String
 
     @@index([authorId])
+    @@index([title])
 }

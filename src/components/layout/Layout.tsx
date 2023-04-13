@@ -14,7 +14,7 @@ export default function Layout({ title, children }: LayoutProps) {
       <Head>
         <title>{title}</title>
         <meta name="description" content="WafflesAreBetter Corp©" />
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
