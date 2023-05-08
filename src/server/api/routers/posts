@@ -3,7 +3,7 @@
 import { User } from "@clerk/nextjs/dist/api";
 import { clerkClient } from "@clerk/nextjs/server";
 import { TRPCError } from "@trpc/server";
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 const filterUserForClient = ({ id, username, profileImageUrl }: User) => {
   return { id, username, profileImageUrl };

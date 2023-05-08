@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+/* eslint @typescript-eslint/require-await: 0 */
+export async function GET(_request: Request) {
     return NextResponse.json("Hello")
 }

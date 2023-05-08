@@ -40,7 +40,7 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts"
-  ],
+, "src/server/api/routers/posts"  ],
   "exclude": [
     "node_modules"
   ]

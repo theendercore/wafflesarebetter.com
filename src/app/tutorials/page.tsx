@@ -1,12 +1,11 @@
-"use client";
-import { RouterOutputs, api } from "@/utils/api";
+// "use client";
+// import { RouterOutputs, api } from "@/utils/api";
 import { SignInButton, useUser  } from '@clerk/nextjs';
 import SButton from "@/components/SButton";
 import Image from "next/image";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { LoadingPage, LoadingSpinner } from "@/components/LoadingSpinner";
 
 dayjs.extend(relativeTime);
 
@@ -43,32 +42,32 @@ const CratePostWizard = () => {
   );
 };
 
-type PostWithUser = RouterOutputs["posts"]["getAll"][number];
-function PostCard(props: PostWithUser) {
-  const { post, author } = props;
+// type PostWithUser = RouterOutputs["posts"]["getAll"][number];
+// function PostCard(props: PostWithUser) {
+//   const { post, author } = props;
 
-  return (
-    <div className="flex gap-2 rounded-lg bg-slate-300 p-3 drop-shadow-xl">
-      <div className="flex flex-col items-center">
-        <Image
-          src={author.profileImageUrl}
-          alt="Profile Image"
-          width={56}
-          height={56}
-          placeholder="empty"
-          className="h-12 w-12 rounded-full"
-        />
-        <span>{author.username}</span>
-      </div>
+//   return (
+//     <div className="flex gap-2 rounded-lg bg-slate-300 p-3 drop-shadow-xl">
+//       <div className="flex flex-col items-center">
+//         <Image
+//           src={author.profileImageUrl}
+//           alt="Profile Image"
+//           width={56}
+//           height={56}
+//           placeholder="empty"
+//           className="h-12 w-12 rounded-full"
+//         />
+//         <span>{author.username}</span>
+//       </div>
 
-      <div className="flex flex-col p-3 pt-0">
-        <h3 className="text-2xl font-bold">{post.title}</h3>
-        <p>{post.content}</p>
-        <span>{`${dayjs(post.createdAt).fromNow()}`}</span>
-      </div>
-    </div>
-  );
-}
+//       <div className="flex flex-col p-3 pt-0">
+//         <h3 className="text-2xl font-bold">{post.title}</h3>
+//         <p>{post.content}</p>
+//         <span>{`${dayjs(post.createdAt).fromNow()}`}</span>
+//       </div>
+//     </div>
+//   );
+// }
 
 // const Feed = () => {
 //   const { data, isLoading: postsLoading } = api.posts.getAll.useQuery();
@@ -87,7 +86,7 @@ function PostCard(props: PostWithUser) {
 // };
 
 export default function Tutorials() {
-  const { user, isLoaded: userLoaded, isSignedIn } = useUser();
+  const { isLoaded: userLoaded, isSignedIn } = useUser();
   // api.posts.getAll.useQuery();
 
   if (!userLoaded) return <div />;
