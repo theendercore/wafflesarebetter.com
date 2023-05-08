@@ -1,6 +1,7 @@
-// "use client";
+"use client";
+
 // import { RouterOutputs, api } from "@/utils/api";
-import { SignInButton, useUser  } from '@clerk/nextjs';
+import { SignInButton, useUser } from "@clerk/nextjs";
 import SButton from "@/components/SButton";
 import Image from "next/image";
 
@@ -8,6 +9,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
+
 
 const CratePostWizard = () => {
   const { user } = useUser();
@@ -102,14 +104,11 @@ export default function Tutorials() {
           <>
             <SButton>
               B
-              {/* <SignOutButton /> */}
-              {/* <SignOutButton /> */}
             </SButton>
             <CratePostWizard />
           </>
         )}
       </div>
-      {/* <Feed /> */}
     </>
   );
 }

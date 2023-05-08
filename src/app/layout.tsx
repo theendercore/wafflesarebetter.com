@@ -21,7 +21,7 @@ export default function RootLayout({
       <ClerkProvider>
         <body className="flex min-h-screen flex-col">
           <Header />
-          <main className="min-h-[82vh]flex-grow container m-auto">
+          <main className="container m-auto min-h-[82vh] flex-grow text-slate-300">
             {children}
           </main>
           <Footer className="flex-end" />

@@ -6,7 +6,6 @@ export default withClerkMiddleware((_req: NextRequest) => {
   return NextResponse.next();
 });
  
-// Stop Middleware running on static files and public folder
 export const config = {
   matcher: [
     "/((?!static|.*\\..*|_next|favicon.ico).*)",
