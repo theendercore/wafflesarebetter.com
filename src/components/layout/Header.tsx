@@ -1,19 +1,31 @@
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
 
-export default function Header() {
+type HeaderProps = {
+  className?: string;
+};
+
+export default function Header({ className }: HeaderProps) {
   return (
-    <div className="m-auto flex items-center justify-evenly gap-40 h-fit">
-      <Link as="/" href="/" className="">
-        <img src="/favicon.ico" alt="WafflesAreBetter Logo" />
-      </Link>
-      <ul className="flex gap-20">
-        <HeaderItem url="/">Home</HeaderItem>
-        <HeaderItem url="/about">About Us</HeaderItem>
-        <HeaderItem url="/wafflessmp">WafflesSMP</HeaderItem>
-        <HeaderItem url="/tutorials">Tutorials</HeaderItem>
-      </ul>
-    </div>
+    <header className={className}>
+      <div className="m-auto flex h-fit items-center justify-evenly gap-40 bg-gray-700 font-semibold text-slate-300">
+        <Link as="/" href="/" className="p-2">
+          <Image
+            src="/favicon.ico"
+            width={50}
+            height={50}
+            alt="WafflesAreBetter Logo"
+            className="drop-shadow-xl"
+          />
+        </Link>
+        <ul className="flex gap-20">
+          <HeaderItem url="/">Home</HeaderItem>
+          <HeaderItem url="/about">About Us</HeaderItem>
+          <HeaderItem url="/wafflessmp">WafflesSMP</HeaderItem>
+          <HeaderItem url="/tutorials">Tutorials</HeaderItem>
+        </ul>
+      </div>
+    </header>
   );
 }
 

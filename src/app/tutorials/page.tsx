@@ -1,6 +1,6 @@
 "use client";
 import { RouterOutputs, api } from "@/utils/api";
-import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
+import { SignInButton, useUser  } from '@clerk/nextjs';
 import SButton from "@/components/SButton";
 import Image from "next/image";
 
@@ -70,25 +70,25 @@ function PostCard(props: PostWithUser) {
   );
 }
 
-const Feed = () => {
-  const { data, isLoading: postsLoading } = api.posts.getAll.useQuery();
+// const Feed = () => {
+//   const { data, isLoading: postsLoading } = api.posts.getAll.useQuery();
 
-  if (postsLoading) return <LoadingSpinner size={90} />;
+//   if (postsLoading) return <LoadingSpinner size={90} />;
 
-  if (!data) return <div>Something went wrong</div>;
+//   if (!data) return <div>Something went wrong</div>;
 
-  return (
-    <div className="flex flex-wrap gap-10 p-10">
-      {data?.map((p) => (
-        <PostCard key={p.post.id} {...p} />
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div className="flex flex-wrap gap-10 p-10">
+//       {data?.map((p) => (
+//         <PostCard key={p.post.id} {...p} />
+//       ))}
+//     </div>
+//   );
+// };
 
 export default function Tutorials() {
   const { user, isLoaded: userLoaded, isSignedIn } = useUser();
-  api.posts.getAll.useQuery();
+  // api.posts.getAll.useQuery();
 
   if (!userLoaded) return <div />;
 
@@ -102,13 +102,15 @@ export default function Tutorials() {
         ) : (
           <>
             <SButton>
-              <SignOutButton />
+              B
+              {/* <SignOutButton /> */}
+              {/* <SignOutButton /> */}
             </SButton>
             <CratePostWizard />
           </>
         )}
       </div>
-      <Feed />
+      {/* <Feed /> */}
     </>
   );
 }
