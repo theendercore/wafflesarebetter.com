@@ -1,12 +1,12 @@
-import Layout from "~/components/layout/Layout";
-import { RouterOutputs, api } from "~/utils/api";
+"use client";
+import { RouterOutputs, api } from "@/utils/api";
 import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import SButton from "~/components/SButton";
+import SButton from "@/components/SButton";
 import Image from "next/image";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { LoadingPage, LoadingSpinner } from "~/components/LoadingSpinner";
+import { LoadingPage, LoadingSpinner } from "@/components/LoadingSpinner";
 
 dayjs.extend(relativeTime);
 
@@ -73,7 +73,7 @@ function PostCard(props: PostWithUser) {
 const Feed = () => {
   const { data, isLoading: postsLoading } = api.posts.getAll.useQuery();
 
-  if (postsLoading) return <LoadingPage />;
+  if (postsLoading) return <LoadingSpinner size={90} />;
 
   if (!data) return <div>Something went wrong</div>;
 
@@ -93,7 +93,7 @@ export default function Tutorials() {
   if (!userLoaded) return <div />;
 
   return (
-    <Layout title="Tutorials">
+    <>
       <div className="flex flex-col items-center justify-center gap-3 p-10">
         {!isSignedIn ? (
           <SButton>
@@ -109,6 +109,6 @@ export default function Tutorials() {
         )}
       </div>
       <Feed />
-    </Layout>
+    </>
   );
 }
