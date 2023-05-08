@@ -7,11 +7,20 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { LoadingPage, LoadingSpinner } from "~/components/LoadingSpinner";
+import { useState } from "react";
 
 dayjs.extend(relativeTime);
 
 const CratePostWizard = () => {
   const { user } = useUser();
+
+  const [input, setInput] = useState<{ title: string; content: string }>({
+    title: "",
+    content: "",
+  });
+
+  // const { mutate } = api.posts.create.useMutation();
+
   if (!user) return null;
 
   return (
@@ -30,6 +39,8 @@ const CratePostWizard = () => {
           id="title"
           placeholder="Title..."
           className="bg-transparent outline-none"
+          value={input.title}
+          onChange={(e) => setInput({ ...input, title: e.target.value })}
         />
         <input
           type="text"
@@ -37,7 +48,16 @@ const CratePostWizard = () => {
           id="content"
           placeholder="Content..."
           className="bg-transparent outline-none"
+          value={input.content}
+          onChange={(e) => setInput({ ...input, content: e.target.value })}
         />
+        <button
+          type="submit"
+          // onSubmit={() => mutate(input)}
+          className="rounded-full bg-slate-300 text-gray-600"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
@@ -87,7 +107,7 @@ const Feed = () => {
 };
 
 export default function Tutorials() {
-  const { user, isLoaded: userLoaded, isSignedIn } = useUser();
+  const { isLoaded: userLoaded, isSignedIn } = useUser();
   api.posts.getAll.useQuery();
 
   if (!userLoaded) return <div />;

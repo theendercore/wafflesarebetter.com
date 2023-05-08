@@ -15,7 +15,7 @@ export default function Layout({ title, children }: LayoutProps) {
         <title>{title}</title>
         <meta name="description" content="WafflesAreBetter Corp©" />
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.webp" />
       </Head>
       <Header />
       <div className="min-h-[84vh] flex-grow  bg-gray-200">
