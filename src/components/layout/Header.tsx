@@ -8,12 +8,12 @@ type HeaderProps = {
 export default function Header({ className }: HeaderProps) {
   return (
     <header className={className}>
-      <div className="m-auto flex h-fit items-center justify-evenly gap-40 bg-gray-700 font-semibold text-slate-300">
+      <div className="m-auto flex h-fit items-center justify-evenly gap-40 bg-gray-700 text-slate-300">
         <Link as="/" href="/" className="p-2">
           <Image
             src="/favicon.ico"
-            width={50}
-            height={50}
+            width={60}
+            height={60}
             alt="WafflesAreBetter Logo"
             className="drop-shadow-xl"
           />
