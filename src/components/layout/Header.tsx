@@ -7,40 +7,36 @@ type HeaderProps = {
 
 export default function Header({ className }: HeaderProps) {
   return (
-    <header className={className}>
-      <div className="m-auto flex h-fit items-center justify-evenly gap-40 bg-gray-700 text-slate-300">
-        <Link as="/" href="/" className="p-2">
-          <Image
-            src="/favicon.ico"
-            width={60}
-            height={60}
-            alt="WafflesAreBetter Logo"
-            className="drop-shadow-xl"
-          />
-        </Link>
-        <ul className="flex gap-20">
-          <HeaderItem url="/">Home</HeaderItem>
-          <HeaderItem url="/about">About Us</HeaderItem>
-          <HeaderItem url="/wafflessmp">WafflesSMP</HeaderItem>
-          <HeaderItem url="/tutorials">Tutorials</HeaderItem>
-        </ul>
-      </div>
+    <header
+      className={
+        "flex items-center justify-between gap-10 bg-header text-xl font-semibold text-white drop-shadow-md md:px-20 lg:text-3xl " +
+        className
+      }
+    >
+      <Link as="/" href="/" className="flex items-center gap-5 py-3">
+        <Image
+          src="/waf.png"
+          width={70}
+          height={70}
+          alt="WafflesAreBetter Logo"
+          className="pixel-img drop-shadow-xl hover:brightness-90"
+        />
+        <span className="hover:underline">WafflesAreBetter</span>
+      </Link>
+      <ul className="flex gap-10">
+        <HeaderItem url="/about">ABOUT US</HeaderItem>
+        <HeaderItem url="/wafflessmp">WAFFLES SMP</HeaderItem>
+        {/* <HeaderItem url="/tutorials">TUTORIALS</HeaderItem> */}
+      </ul>
     </header>
   );
 }
 
-function HeaderItem({
-  url,
-  children,
-  className,
-}: {
-  url: string;
-  children?: React.ReactNode;
-  className?: string;
-}) {
+type HeaderItemProps = { url: string; children?: React.ReactNode };
+function HeaderItem({ url, children }: HeaderItemProps) {
   return (
-    <li className={className}>
-      <Link as={url} href="/" className="py-8 hover:underline">
+    <li>
+      <Link as={url} href="/" className="hover:underline">
         {children}
       </Link>
     </li>
