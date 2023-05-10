@@ -9,6 +9,7 @@ export const metadata = {
   description: "Home Page of the WafflesAreBetter Corp© website.",
   openGraph: {
     title: "WafflesAreBetter",
+    description: "Home Page of the WafflesAreBetter Corp© website.",
   },
 };
 
