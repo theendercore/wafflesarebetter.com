@@ -2,16 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 type HeaderProps = {
-  className?: string;
+  className: string;
 };
 
 export default function Header({ className }: HeaderProps) {
   return (
     <header
-      className={
-        "flex items-center justify-between gap-10 bg-header text-xl font-semibold text-white drop-shadow-md md:px-20 lg:text-3xl " +
-        className
-      }
+      className={`flex items-center justify-between gap-10 bg-header text-xl font-semibold text-white drop-shadow-md md:px-20 lg:text-3xl ${className}`}
     >
       <Link as="/" href="/" className="flex items-center gap-5 py-3">
         <Image
