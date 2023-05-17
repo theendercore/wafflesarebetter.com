@@ -22,9 +22,7 @@ export default function RootLayout({
       {/* <ClerkProvider> */}
       <body className="layout min-h-screen">
         <Header className="h-max font-alata" />
-        <main className="text-white">
-          {children}
-        </main>
+        <main className="text-white">{children}</main>
         <Footer className="h-max font-alata" />
       </body>
       {/* </ClerkProvider> */}
