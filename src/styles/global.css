@@ -7,3 +7,8 @@
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
+
+.layout {
+  display: grid;
+  grid-template-rows: max-content auto max-content;
+}

@@ -1,4 +1,3 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "@/styles/global.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
@@ -20,13 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${alata.variable}`}>
-      <ClerkProvider>
-        <body className="flex min-h-screen flex-col">
-          <Header className="flex-none font-alata" />
-          <main className="flex-1 bg-hero bg-cover text-white">{children}</main>
-          <Footer className="flex-none font-alata" />
-        </body>
-      </ClerkProvider>
+      {/* <ClerkProvider> */}
+      <body className="layout min-h-screen">
+        <Header className="h-max font-alata" />
+        <main className="text-white">
+          {children}
+        </main>
+        <Footer className="h-max font-alata" />
+      </body>
+      {/* </ClerkProvider> */}
     </html>
   );
 }

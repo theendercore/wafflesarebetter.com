@@ -33,7 +33,7 @@ type HeaderItemProps = { url: string; children?: React.ReactNode };
 function HeaderItem({ url, children }: HeaderItemProps) {
   return (
     <li>
-      <Link as={url} href="/" className="hover:underline">
+      <Link as={url} href="/" className="hover:underline drop-shadow-md">
         {children}
       </Link>
     </li>
